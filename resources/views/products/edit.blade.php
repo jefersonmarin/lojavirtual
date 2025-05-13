@@ -26,5 +26,6 @@
         }}"/><br>
         <input type="submit" value="Salvar" />
     </form>
+    <a href="{{ url('/products') }}">Cancelar</a>
 </body>
 </html>

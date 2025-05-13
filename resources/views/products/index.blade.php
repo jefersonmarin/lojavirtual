@@ -11,6 +11,7 @@
         @foreach($products as $product)
             <li>{{ $product['name']}}</li>
             <a href="{{ url('/products/update', ['id' => $product->id]) }}">Editar</a>
+            <a href="{{ url('/products/delete', ['id' => $product->id]) }}">Deletar</a>
         @endforeach
     </ul>
 
