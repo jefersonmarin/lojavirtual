@@ -9,9 +9,15 @@
     <h3>Lista de produtos</h3>
     <ul>
         @foreach($products as $product)
-        <li>{{ $product['name']}}</li>
+            <li>{{ $product['name']}}</li>
+            <a href="{{ url('/products/update', ['id' => $product->id]) }}">Editar</a>
         @endforeach
     </ul>
+
+    @if ($message = Session::get('success'))
+        <div>{{ $message }}</div>
+    @endif
+
     <a href="{{ url('/products/new') }}">Adicionar produto</a>
 </body>
 </html>

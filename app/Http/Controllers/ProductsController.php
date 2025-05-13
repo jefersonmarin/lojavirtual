@@ -25,6 +25,25 @@ class ProductsController extends Controller
         'price' => $request->price,
         'type_id' => $request->type_id
         ]);
-        return ' <p> Produto salvo com sucesso! </p> ';
+        return redirect('/products');
+    }
+
+    public function edit($id) {
+        //find é o método que faz select * from products where id= ?
+        $product = Product::find($id);
+        //retornamos a view passando a TUPLA de produto consultado
+        return view('products.edit', ['product' => $product]);
+        }
+    public function update(Request $request) {
+        $product = Product::find($request->id);
+        //método update faz um update product set name = ? etc...
+        $product->update([
+        'name' => $request->name,
+        'description' => $request->description,
+        'quantity' => $request->quantity,
+        'price' => $request->price,
+        'type_id' => $request->type_id
+        ]);
+        return redirect('/products');
     }
 }
