@@ -20,5 +20,6 @@
         <input name="type_id" type="number" /><br>
         <input type="submit" value="Salvar" />
     </form>
+    <a href="{{ url('/products') }}">Voltar</a>
 </body>
 </html>
