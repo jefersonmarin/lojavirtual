@@ -6,6 +6,8 @@
     <title>Lista de produtos</title>
 </head>
 <body>
+    <a href="{{ url('/products/new') }}">Adicionar produto</a><br><br>
+    <a href="{{ url('/') }}">Voltar</a>
     <h3>Lista de produtos</h3>
     <ul>
         @foreach($products as $product)
@@ -15,10 +17,5 @@
         @endforeach
     </ul>
 
-    @if ($message = Session::get('success'))
-        <div>{{ $message }}</div>
-    @endif
-
-    <a href="{{ url('/products/new') }}">Adicionar produto</a>
 </body>
 </html>
